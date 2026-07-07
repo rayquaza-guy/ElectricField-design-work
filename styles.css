@@ -276,7 +276,7 @@ a:focus-visible, button:focus-visible{
 }
 .hero__actions{
   margin-top: 34px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   display: flex;
   justify-content: center;
   gap: 14px;
@@ -323,7 +323,7 @@ a:focus-visible, button:focus-visible{
   position: relative;
   z-index: 2;
   flex: 0 0 auto;
-  padding: 120px 10px 10px;
+  padding: 120px 10px 30px;
   background: none;
 }
 .hero__stats-label{
@@ -345,7 +345,22 @@ a:focus-visible, button:focus-visible{
 .hero__stats .capability__divider{
   background: rgba(255,255,255,.25);
 }
-
+.hero__stats .capability__stat{
+  transition: transform .25s ease;
+  cursor: default;
+}
+.hero__stats .capability__stat:hover{
+  transform: translateY(-3px);   /* PARAM: pop distance — increase for a bigger lift */
+}
+.hero__stats .capability__stat:hover .capability__num{
+  text-shadow:
+    0 0 12px rgba(206, 182, 182, 0.9),      /* PARAM: glow tightness/brightness */
+    0 0 28px rgba(0, 118, 253, 0.8);       /* PARAM: outer glow color/spread — using your accent blue */
+  transition: text-shadow .25s ease;
+}
+.hero__stats .capability__num{
+  transition: text-shadow .25s ease;    /* needed so the glow fades in/out smoothly, not instantly */
+}
 @media (max-width: 900px){
   .hero{ height: auto; min-height: 100vh; }
   .hero__title{ font-size: 34px; }
