@@ -787,6 +787,16 @@ a:focus-visible, button:focus-visible{
   letter-spacing: 0.02em;
   line-height: 1.5;
 }
+.awards__photo{
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  transition: transform .3s ease, box-shadow .3s ease;   /* enables the hover animation */
+}
+.awards__photo:hover{
+  transform: translateY(-6px) scale(1.02);   /* PARAM: lift height + zoom amount */
+  box-shadow: 0 24px 48px -16px rgba(16, 32, 48, 0.35);  /* PARAM: shadow spread/darkness */
+}
 .awards__copy h2{
   font-size: 34px;
   margin-bottom: 20px;
